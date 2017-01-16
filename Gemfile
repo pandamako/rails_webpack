@@ -50,6 +50,7 @@ group :development, :test do
   gem 'guard-spring', require: false
   gem 'guard-pow', require: false
   gem 'guard-rubocop', require: false
+  gem 'rails-controller-testing'
 end
 
 group :test do
