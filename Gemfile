@@ -32,6 +32,7 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano-file-permissions', require: false, github: 'morr/file-permissions'
   gem 'rvm1-capistrano3', require: false
+  gem 'capistrano3-unicorn', require: false
   gem 'airbrussh', require: false
 end
 
