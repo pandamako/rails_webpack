@@ -24,7 +24,7 @@ gem 'unicorn'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
-  gem 'listen', '~> 3.0.5'
+  gem 'listen'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'capistrano', require: false

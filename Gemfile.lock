@@ -330,7 +330,7 @@ DEPENDENCIES
   guard-spring
   jbuilder (~> 2.5)
   jquery-rails
-  listen (~> 3.0.5)
+  listen
   puma (~> 3.0)
   rails (~> 5.0.1)
   rails-controller-testing

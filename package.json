@@ -5,10 +5,14 @@
   "repository": "git@github.com:Sfolt/rails_webpack.git",
   "author": "Daria <darya.office@gmail.com>",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
+    "coffee": "^3.3.0",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.12.2",
     "stats-webpack-plugin": "^0.4.3",
-    "webpack": "^1.14.0",
+    "webpack": "^1.14.0"
+  },
+  "devDependencies": {
     "webpack-dev-server": "^1.16.2"
   }
 }

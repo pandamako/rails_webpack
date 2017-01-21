@@ -10,11 +10,15 @@ var devServerPort = 3808;
 
 // set NODE_ENV=production on the environment to add asset fingerprints
 var production = process.env.NODE_ENV === 'production';
+var development = process.env.NODE_ENV === 'development';
+//Плагин, который позволяет вычленять из лоадера готовый текст
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var config = {
   entry: {
     // Sources are expected to live in $app_root/webpack
-    'application': './webpack/application.js'
+    'application': './webpack/application.js',
+    // 'application': './webpack/application.css'
   },
 
   output: {
@@ -29,7 +33,23 @@ var config = {
   },
 
   resolve: {
-    root: path.join(__dirname, '..', 'webpack')
+    root: path.join(__dirname, '..', 'webpack'),
+    modulesDirectories: ['node_modules'],
+
+    //Расширения. Если перечислить тут расширения разных файлов, то можно в require не писать расширение
+    extensions: ['', '.js', '.coffee']
+  },
+
+  module: {
+    //Загрузчики используются для обработки различных типов файлов, для транспиллинга и т.д.
+    //Загрузчик - это обычный nodejs модуль
+    loaders: [
+      { test: /\.coffee$/, loader: 'coffee-loader' }
+      // {
+        // test: /\.(css|scss|sass)$/,
+        // loader: ExtractTextPlugin.extract("style", "css!postcss!sass")
+      // }
+    ]
   },
 
   plugins: [
@@ -41,7 +61,9 @@ var config = {
       chunks: false,
       modules: false,
       assets: true
-    })]
+    })
+    // new ExtractTextPlugin(development ? 'css/[name].css' : 'css/[name].[contenthash].css')
+  ]
 };
 
 if (production) {

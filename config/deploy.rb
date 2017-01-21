@@ -12,7 +12,6 @@ set :use_sudo, false
 set :deploy_via, :copy
 set :unicorn_conf, "#{deploy_to}/current/config/unicorn/production.rb"
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
-set :bundle_without, [:development, :test]
 set :linked_files, %w{
   config/secrets.yml
 }
@@ -24,8 +23,7 @@ namespace :deploy do
   desc 'Run npm install'
   task :npm_install do
     on roles :app do
-      execute "cd #{release_path} && npm install && webpack build"
-      # execute "cd #{release_path} && bundle exec rake webpack:compile"
+      execute "cd #{release_path} && npm install && webpack build && bundle exec rake webpack:compile"
     end
   end
 end
