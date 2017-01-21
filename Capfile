@@ -5,9 +5,9 @@ require "capistrano/setup"
 require "capistrano/deploy"
 
 require 'rvm1/capistrano3'
-require 'capistrano3/unicorn'
 require 'capistrano/bundler'
 require 'capistrano/rails/assets'
+require 'capistrano3/unicorn'
 require 'capistrano/rails'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined

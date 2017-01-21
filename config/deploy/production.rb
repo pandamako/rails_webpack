@@ -1,14 +1,9 @@
 set :stage, :production
-set :deploy_to, "/home/d/projects/dariaskorniakova/rails_webpack"
+set :deploy_to, "/home/apps/#{fetch :application}/#{fetch :stage}"
 
-server '188.166.58.21',
-  user: 'd',
-  port: 3030,
-  roles: [:app, :web, :db],
-  primary: true,
-  ssh_options: {
-    user: 'd'
-  }
+server '139.162.157.78',
+  user: 'deploy',
+  roles: [:app, :web, :db]
 
 # server-based syntax
 # ======================
